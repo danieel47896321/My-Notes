@@ -3,4 +3,6 @@
     <string name="Home">Home</string>
     <string name="Title">Title</string>
     <string name="Search" translatable="true">Search</string>
+    <string name="AddNote">Add Note</string>
+    <string name="RemoveNote">Remove Note</string>
 </resources>

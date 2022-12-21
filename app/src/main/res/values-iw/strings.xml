@@ -4,4 +4,6 @@
     <string name="Title">כותרת</string>
     <string name="Home">בית</string>
     <string name="Search" translatable="true">חיפוש</string>
+    <string name="AddNote">הוספת הערה</string>
+    <string name="RemoveNote">הסרת הערה</string>
 </resources>
