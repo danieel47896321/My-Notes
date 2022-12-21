@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/MyNotes/app/src/main/res/drawable-v24/add.xml" value="0.289" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/MyNotes/app/src/main/res/drawable-v24/arrow_next.xml" value="0.289" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/MyNotes/app/src/main/res/drawable-v24/open.xml" value="0.289" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/MyNotes/app/src/main/res/drawable-v24/remove.xml" value="0.289" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/MyNotes/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/MyNotes/app/src/main/res/layout/header.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/MyNotes/app/src/main/res/layout/note_view.xml" value="0.25" />
       </map>
     </option>
   </component>

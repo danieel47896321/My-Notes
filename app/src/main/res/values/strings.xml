@@ -2,7 +2,10 @@
     <string name="app_name">My Notes</string>
     <string name="Home">Home</string>
     <string name="Title">Title</string>
+    <string name="Date">Date</string>
+    <string name="Text">Text</string>
     <string name="Search" translatable="true">Search</string>
     <string name="AddNote">Add Note</string>
+    <string name="Note">Note</string>
     <string name="RemoveNote">Remove Note</string>
 </resources>

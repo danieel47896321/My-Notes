@@ -2,8 +2,11 @@
 <resources>
     <string name="app_name">ההערות שלי</string>
     <string name="Title">כותרת</string>
+    <string name="Date">תאריך</string>
+    <string name="Text">טקטס</string>
     <string name="Home">בית</string>
     <string name="Search" translatable="true">חיפוש</string>
     <string name="AddNote">הוספת הערה</string>
+    <string name="Note">הערה</string>
     <string name="RemoveNote">הסרת הערה</string>
 </resources>
