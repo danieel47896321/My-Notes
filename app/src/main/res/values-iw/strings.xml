@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">My Notes</string>
+    <string name="app_name">ההערות שלי</string>
+    <string name="Title">כותרת</string>
+    <string name="Home">בית</string>
+    <string name="Search" translatable="true">חיפוש</string>
 </resources>
