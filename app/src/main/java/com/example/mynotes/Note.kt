@@ -2,11 +2,10 @@ package com.example.mynotes
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mynotes.Class.MyNote
+import com.example.mynotes.myClass.MyNote
 
 class Note : AppCompatActivity() {
     private lateinit var noteText : TextView

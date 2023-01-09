@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mynotes.Class.MyNote
-import com.example.mynotes.MainActivity
+import com.example.mynotes.myClass.MyNote
 import com.example.mynotes.Note
 import com.example.mynotes.R
 
@@ -25,7 +24,7 @@ class NoteAdapter(noteList: ArrayList<MyNote>) : RecyclerView.Adapter<NoteAdapte
         holder.noteDate.text = list[position].noteDate
         holder.noteText.text = list[position].noteText
         holder.constraintLayout.setOnClickListener{
-            var intent = Intent(holder.itemView.context, Note::class.java)
+            val intent = Intent(holder.itemView.context, Note::class.java)
             intent.putExtra("note", list[position])
             holder.itemView.context.startActivity(intent)
             (holder.itemView.context as Activity).finish()

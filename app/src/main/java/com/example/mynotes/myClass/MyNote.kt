@@ -1,4 +1,4 @@
-package com.example.mynotes.Class
+package com.example.mynotes.myClass
 
 import java.io.Serializable
 

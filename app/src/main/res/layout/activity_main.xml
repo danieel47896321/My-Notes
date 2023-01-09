@@ -19,6 +19,8 @@
     <EditText
         android:id="@+id/userSearch"
         android:inputType="text"
+        android:text=""
+        android:autofillHints=""
         style="@style/EditText_Style_Normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
