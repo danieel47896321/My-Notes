@@ -1,7 +1,11 @@
 # My-Notes Application
 My Notes used to save and show notes, you can see the date and information.
+
 By click the note you will moved to generic page witch show the text about the note.
+
 The data coming from Firebase.
+
+Implemented MVC architecture.
 
 ![CHEESE!](https://user-images.githubusercontent.com/74861262/209002727-2d47c315-ea1e-496d-a77a-883953b6cf24.png)
 ![CHEESE!](https://user-images.githubusercontent.com/74861262/209002737-c0d747a8-9f3c-4940-b8f0-001dd7c37db2.png)
