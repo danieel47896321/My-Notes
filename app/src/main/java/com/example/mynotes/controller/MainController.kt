@@ -1,7 +1,9 @@
 package com.example.mynotes.controller
 
 import android.view.View
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mynotes.MainActivity
+import com.example.mynotes.adapter.NoteAdapter
 import com.example.mynotes.model.MainModel
 import com.example.mynotes.myClass.MyNote
 import com.google.firebase.database.*
@@ -12,6 +14,12 @@ class MainController(var mainModel: MainModel, var view: MainActivity) {
     fun setView() {
         view.setBackIcon(View.GONE)
         setNotes()
+        setProgressBar()
+    }
+    private fun setProgressBar() {
+        if(mainModel.noteList.isNotEmpty()){
+            view.progressBarStatus(View.GONE)
+        }
     }
     private fun setNotes() {
         val reference = database.ref
@@ -24,7 +32,9 @@ class MainController(var mainModel: MainModel, var view: MainActivity) {
                             val newNote = note.getValue(MyNote::class.java)
                             mainModel.noteList.add(newNote!!)
                         }
-                        view.showNotes(mainModel.noteList)
+                        setProgressBar()
+                        val noteAdapter = NoteAdapter(mainModel.noteList)
+                        view.showNotes(GridLayoutManager(view,1), noteAdapter)
                     }
                 }
             }
@@ -48,8 +58,9 @@ class MainController(var mainModel: MainModel, var view: MainActivity) {
                             }
                         }
                     }
-                    view.showNotes(mainModel.noteList)
-                }
+                    setProgressBar()
+                    val noteAdapter = NoteAdapter(mainModel.noteList)
+                    view.showNotes(GridLayoutManager(view,1), noteAdapter)                }
             }
             override fun onCancelled(error: DatabaseError) {}
         })

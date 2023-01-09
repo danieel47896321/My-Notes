@@ -5,11 +5,12 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mynotes.Adapter.NoteAdapter
+import com.example.mynotes.adapter.NoteAdapter
 import com.example.mynotes.controller.MainController
 import com.example.mynotes.model.MainModel
 import com.example.mynotes.myClass.MyNote
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainModel: MainModel
     private lateinit var mainController: MainController
     private lateinit var backIcon: ImageView
+    private lateinit var progressBar: ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         userSearch = findViewById<EditText>(R.id.userSearch)
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         backIcon = findViewById<ImageView>(R.id.backIcon)
+        progressBar = findViewById<ProgressBar>(R.id.progressBar)
         mainController.setView()
         noteSearch()
     }
@@ -46,9 +49,9 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-    fun showNotes(noteList: ArrayList<MyNote>) {
-        val noteAdapter = NoteAdapter(noteList)
-        recyclerView.layoutManager = GridLayoutManager(this,1)
+    fun showNotes(gridLayoutManager: GridLayoutManager, noteAdapter: NoteAdapter) {
+        recyclerView.layoutManager = gridLayoutManager
         recyclerView.adapter = noteAdapter
     }
+    fun progressBarStatus(view: Int) { progressBar.visibility = view }
 }

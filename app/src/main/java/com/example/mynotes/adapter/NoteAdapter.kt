@@ -1,4 +1,4 @@
-package com.example.mynotes.Adapter
+package com.example.mynotes.adapter
 
 import android.app.Activity
 import android.content.Intent
@@ -12,25 +12,23 @@ import com.example.mynotes.myClass.MyNote
 import com.example.mynotes.Note
 import com.example.mynotes.R
 
-class NoteAdapter(noteList: ArrayList<MyNote>) : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
-    private var list = ArrayList<MyNote>()
-    init { list = noteList }
+class NoteAdapter(var noteList: ArrayList<MyNote>) : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.note_view,parent,false)
         return ViewHolder(v)
     }
     override fun onBindViewHolder(holder: NoteAdapter.ViewHolder, position: Int) {
-        holder.noteTitle.text = list[position].noteTitle
-        holder.noteDate.text = list[position].noteDate
-        holder.noteText.text = list[position].noteText
+        holder.noteTitle.text = noteList[position].noteTitle
+        holder.noteDate.text = noteList[position].noteDate
+        holder.noteText.text = noteList[position].noteText
         holder.constraintLayout.setOnClickListener{
             val intent = Intent(holder.itemView.context, Note::class.java)
-            intent.putExtra("note", list[position])
+            intent.putExtra("note", noteList[position])
             holder.itemView.context.startActivity(intent)
             (holder.itemView.context as Activity).finish()
         }
     }
-    override fun getItemCount(): Int { return list.size }
+    override fun getItemCount(): Int { return noteList.size }
     inner class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
         var noteTitle : TextView
         var noteDate : TextView
