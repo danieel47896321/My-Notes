@@ -13,9 +13,9 @@ import com.example.mynotes.myClass.MyNote
 class Note : AppCompatActivity() {
     private lateinit var noteModel: NoteModel
     private lateinit var noteController: NoteController
-    private lateinit var noteText : TextView
-    private lateinit var title : TextView
-    private lateinit var backIcon : ImageView
+    private lateinit var noteText: TextView
+    private lateinit var title: TextView
+    private lateinit var backIcon: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note)
@@ -39,7 +39,7 @@ class Note : AppCompatActivity() {
         }
     }
     private fun setTitle(noteTitle: String) { title.text = noteTitle }
-    private fun setText(noteText: String) { title.text = noteText }
+    private fun setText(text: String) { noteText.text = text }
     private fun setBackIcon() { backIcon.setOnClickListener{ onBackPressed() } }
     override fun onBackPressed() {
         super.onBackPressed()
