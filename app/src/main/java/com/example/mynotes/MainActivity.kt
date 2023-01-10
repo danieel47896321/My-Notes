@@ -8,13 +8,10 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mynotes.adapter.NoteAdapter
 import com.example.mynotes.controller.MainController
 import com.example.mynotes.model.MainModel
-import com.example.mynotes.myClass.MyNote
-import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     private lateinit var userSearch : EditText
@@ -38,20 +35,26 @@ class MainActivity : AppCompatActivity() {
         mainController.setView()
         noteSearch()
     }
-    fun setBackIcon(view: Int) { backIcon.visibility = view }
-    fun userSearchText(): String { return userSearch.text.toString() }
+    fun mainWhenCase(id: String){
+        when(id){
+            "progressBarStatus" -> { progressBarStatus(mainController.getProgressBarStatus()) }
+            "userSearchText" -> { backIconView(mainController.getBackIconView()) }
+            "setRecyclerView" -> { showNotes(mainController.getNoteAdapter()) }
+        }
+    }
+    private fun progressBarStatus(view: Int) { progressBar.visibility = view }
+    private fun backIconView(view: Int) { backIcon.visibility = view }
+    private fun showNotes(noteAdapter: NoteAdapter) { recyclerView.adapter = noteAdapter }
     private fun noteSearch() {
         userSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {}
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                mainController.userSearchFunc(s.toString())
+                if(s.toString().isNotEmpty())
+                    mainController.userSearchFunc(s.toString())
+                else
+                    mainController.setNotes()
             }
         })
     }
-    fun showNotes(gridLayoutManager: GridLayoutManager, noteAdapter: NoteAdapter) {
-        recyclerView.layoutManager = gridLayoutManager
-        recyclerView.adapter = noteAdapter
-    }
-    fun progressBarStatus(view: Int) { progressBar.visibility = view }
 }
