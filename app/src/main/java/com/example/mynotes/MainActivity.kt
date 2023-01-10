@@ -14,10 +14,10 @@ import com.example.mynotes.controller.MainController
 import com.example.mynotes.model.MainModel
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var userSearch : EditText
-    private lateinit var recyclerView : RecyclerView
     private lateinit var mainModel: MainModel
     private lateinit var mainController: MainController
+    private lateinit var userSearch : EditText
+    private lateinit var recyclerView : RecyclerView
     private lateinit var backIcon: ImageView
     private lateinit var progressBar: ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {

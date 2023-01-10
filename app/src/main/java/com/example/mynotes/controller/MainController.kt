@@ -9,7 +9,6 @@ import com.google.firebase.database.*
 import java.util.*
 
 class MainController(var mainModel: MainModel, var view: MainActivity) {
-    private var database : DatabaseReference = FirebaseDatabase.getInstance("https://my-notes-92ca2-default-rtdb.europe-west1.firebasedatabase.app").reference.child("Notes")
     fun setView() {
         setBackIcon()
         setProgressBar()
@@ -25,7 +24,7 @@ class MainController(var mainModel: MainModel, var view: MainActivity) {
     fun getBackIconView(): Int{ return View.GONE }
     fun getNoteAdapter(): NoteAdapter { return NoteAdapter(mainModel.noteList) }
     fun setNotes() {
-        val reference = database.ref
+        val reference = mainModel.database.ref
         reference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 mainModel.noteList.clear()
@@ -42,7 +41,7 @@ class MainController(var mainModel: MainModel, var view: MainActivity) {
         })
     }
     fun userSearchFunc(text: String) {
-        val reference = database.ref
+        val reference = mainModel.database.ref
         reference.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 mainModel.noteList.clear()
