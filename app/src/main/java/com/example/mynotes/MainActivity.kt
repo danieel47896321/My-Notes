@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
     fun mainWhenCase(id: String){
         when(id){
             "progressBarStatus" -> { progressBarStatus(mainController.getProgressBarStatus()) }
-            "userSearchText" -> { backIconView(mainController.getBackIconView()) }
-            "setRecyclerView" -> { showNotes(mainController.getNoteAdapter()) }
+            "backIconView" -> { backIconView(mainController.getBackIconView()) }
+            "showNotes" -> { showNotes(mainController.getNoteAdapter()) }
         }
     }
     private fun progressBarStatus(view: Int) { progressBar.visibility = view }

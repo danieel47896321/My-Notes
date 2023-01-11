@@ -10,5 +10,5 @@ class MainModel: ViewModel() {
     var noteList: ArrayList<MyNote> = ArrayList<MyNote>()
     var progressBarID = "progressBarStatus"
     var backIconID = "backIconView"
-    var recyclerViewID = "setRecyclerView"
+    var recyclerViewID = "showNotes"
 }
