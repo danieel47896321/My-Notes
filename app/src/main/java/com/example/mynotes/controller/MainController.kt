@@ -1,6 +1,7 @@
 package com.example.mynotes.controller
 
 import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import com.example.mynotes.MainActivity
 import com.example.mynotes.adapter.NoteAdapter
 import com.example.mynotes.model.MainModel
@@ -8,7 +9,8 @@ import com.example.mynotes.myClass.MyNote
 import com.google.firebase.database.*
 import java.util.*
 
-class MainController(var mainModel: MainModel, var view: MainActivity) {
+class MainController(var view: MainActivity) {
+    private var mainModel = ViewModelProvider(view)[MainModel::class.java]
     fun setView() {
         setBackIcon()
         setProgressBar()

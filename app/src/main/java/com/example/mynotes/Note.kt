@@ -5,13 +5,10 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.example.mynotes.controller.NoteController
-import com.example.mynotes.model.NoteModel
 import com.example.mynotes.myClass.MyNote
 
 class Note : AppCompatActivity() {
-    private lateinit var noteModel: NoteModel
     private lateinit var noteController: NoteController
     private lateinit var noteText: TextView
     private lateinit var title: TextView
@@ -22,8 +19,7 @@ class Note : AppCompatActivity() {
         init()
     }
     private fun init(){
-        noteModel = ViewModelProvider(this)[NoteModel::class.java]
-        noteController = NoteController(noteModel, this)
+        noteController = NoteController(this)
         backIcon = findViewById<ImageView>(R.id.backIcon)
         noteText = findViewById(R.id.noteText)
         title = findViewById(R.id.title)

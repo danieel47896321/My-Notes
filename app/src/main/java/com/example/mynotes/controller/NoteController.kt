@@ -1,10 +1,12 @@
 package com.example.mynotes.controller
 
+import androidx.lifecycle.ViewModelProvider
 import com.example.mynotes.Note
 import com.example.mynotes.model.NoteModel
 import com.example.mynotes.myClass.MyNote
 
-class NoteController (var noteModel: NoteModel, var view: Note) {
+class NoteController (var view: Note) {
+    private var noteModel = ViewModelProvider(view)[NoteModel::class.java]
     fun setNote(myNote: MyNote) {
         noteModel.note = myNote
         view.mainWhenCase(noteModel.noteViewID)
